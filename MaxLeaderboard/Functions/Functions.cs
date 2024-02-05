@@ -27,7 +27,8 @@ namespace MaxLeaderboard.Functions
             }
             catch(OverflowException)
             {
-                MaxRankGUI.rankText = int.MaxValue.ToString();
+                LeaderboardUpdate? replace = await leaderboardAsync.Value.ReplaceScore(int.MaxValue);
+                //MaxRankGUI.rankText = int.MaxValue.ToString();
             }
         }
     }
